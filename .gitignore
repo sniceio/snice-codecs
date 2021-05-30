@@ -1,0 +1,39 @@
+# Make sure to ignore Eclipse files
+.classpath
+.project
+.settings
+
+# Intellij
+*.iml
+.idea
+
+# Maven
+release.properties
+pom.xml.releaseBackup
+
+*.ods
+
+# Don't checkin pcaps
+*.pcap
+*.pcapng
+
+# Python
+venv
+*.pyc
+
+# Where maven compiles by default
+target
+dependency-reduced-pom.xml
+
+# Java Files that should be ignored
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Backup files
+*.bak
+
+*.log
