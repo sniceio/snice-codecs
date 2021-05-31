@@ -4,8 +4,8 @@ import io.snice.buffer.Buffer;
 import io.snice.buffer.ReadableBuffer;
 import io.snice.codecs.codec.gtp.gtpc.InfoElement;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.impl.RawTypeLengthInstanceValue;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RawType;
+import io.snice.codecs.codec.gtp.type.GtpType;
+import io.snice.codecs.codec.gtp.type.RawType;
 
 /**
  * In GTPv2, all {@link InfoElement}s are of so-called TLIV - Type, Length, Instance, Value.

@@ -7,7 +7,7 @@ import io.snice.codecs.codec.gtp.Teid;
 import io.snice.codecs.codec.gtp.gtpc.v2.Gtp2Header;
 import io.snice.codecs.codec.gtp.gtpc.v2.Gtp2Message;
 import io.snice.codecs.codec.gtp.gtpc.v2.Gtp2MessageType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RatType;
+import io.snice.codecs.codec.gtp.type.RatType;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

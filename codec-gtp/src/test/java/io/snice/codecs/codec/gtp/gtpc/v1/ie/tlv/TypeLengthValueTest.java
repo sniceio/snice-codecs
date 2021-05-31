@@ -2,7 +2,7 @@ package io.snice.codecs.codec.gtp.gtpc.v1.ie.tlv;
 
 import io.snice.codecs.codec.gtp.GtpRawData;
 import io.snice.codecs.codec.gtp.GtpTestBase;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RawType;
+import io.snice.codecs.codec.gtp.type.RawType;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

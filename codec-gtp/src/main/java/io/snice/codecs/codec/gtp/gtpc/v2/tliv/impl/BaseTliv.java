@@ -2,7 +2,7 @@ package io.snice.codecs.codec.gtp.gtpc.v2.tliv.impl;
 
 import io.snice.buffer.Buffer;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.TypeLengthInstanceValue;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
+import io.snice.codecs.codec.gtp.type.GtpType;
 
 import java.util.Objects;
 

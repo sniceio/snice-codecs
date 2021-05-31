@@ -13,8 +13,8 @@ import io.snice.codecs.codec.gtp.gtpc.v2.tliv.FTeidBuilder;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.Imsi;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.TypeLengthInstanceValue;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.UeTimeZone;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.PdnType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RatType;
+import io.snice.codecs.codec.gtp.type.PdnType;
+import io.snice.codecs.codec.gtp.type.RatType;
 
 /**
  * Generic interface for all various types of {@link Gtp2Message} builders.

@@ -9,8 +9,8 @@ import io.snice.codecs.codec.gtp.gtpc.v2.tliv.FTeid;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.Imsi;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.TlivFramer;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.TypeLengthInstanceValue;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RawType;
+import io.snice.codecs.codec.gtp.type.GtpType;
+import io.snice.codecs.codec.gtp.type.RawType;
 
 import static io.snice.preconditions.PreConditions.assertArgument;
 import static io.snice.preconditions.PreConditions.assertNotNull;

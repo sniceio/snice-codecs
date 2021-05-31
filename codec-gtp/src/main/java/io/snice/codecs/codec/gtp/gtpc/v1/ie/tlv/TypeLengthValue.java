@@ -1,7 +1,7 @@
 package io.snice.codecs.codec.gtp.gtpc.v1.ie.tlv;
 
 import io.snice.codecs.codec.gtp.gtpc.InfoElement;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
+import io.snice.codecs.codec.gtp.type.GtpType;
 
 public interface TypeLengthValue<T extends GtpType> extends InfoElement<T> {
 

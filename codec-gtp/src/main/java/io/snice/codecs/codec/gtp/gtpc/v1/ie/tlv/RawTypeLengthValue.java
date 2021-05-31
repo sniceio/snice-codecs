@@ -2,8 +2,7 @@ package io.snice.codecs.codec.gtp.gtpc.v1.ie.tlv;
 
 import io.snice.buffer.Buffer;
 import io.snice.buffer.ReadableBuffer;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RawType;
+import io.snice.codecs.codec.gtp.type.RawType;
 
 import static io.snice.preconditions.PreConditions.assertArgument;
 import static io.snice.preconditions.PreConditions.assertNotNull;

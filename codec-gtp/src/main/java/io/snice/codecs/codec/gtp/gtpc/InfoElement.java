@@ -7,7 +7,7 @@ import io.snice.codecs.codec.gtp.gtpc.v1.ie.tlv.TypeLengthValueFramer;
 import io.snice.codecs.codec.gtp.gtpc.v1.ie.tv.TypeValue;
 import io.snice.codecs.codec.gtp.gtpc.v1.ie.tv.TypeValueFramer;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.TypeLengthInstanceValue;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
+import io.snice.codecs.codec.gtp.type.GtpType;
 
 /**
  * In GTPv1 there are two kinds of Information Elements (IEs), The TV (Type, Value)

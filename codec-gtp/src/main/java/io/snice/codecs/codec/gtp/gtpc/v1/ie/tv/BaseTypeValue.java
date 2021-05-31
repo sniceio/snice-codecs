@@ -1,7 +1,7 @@
 package io.snice.codecs.codec.gtp.gtpc.v1.ie.tv;
 
 import io.snice.buffer.Buffer;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.GtpType;
+import io.snice.codecs.codec.gtp.type.GtpType;
 
 public abstract class BaseTypeValue<T extends GtpType> implements TypeValue<T> {
 

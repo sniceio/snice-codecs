@@ -13,11 +13,11 @@ import io.snice.codecs.codec.gtp.gtpc.v2.messages.tunnel.CreateSessionRequest;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.FTeid;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.Imsi;
 import io.snice.codecs.codec.gtp.gtpc.v2.tliv.Msisdn;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.ArpType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.EcgiField;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.QosType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.RatType;
-import io.snice.codecs.codec.gtp.gtpc.v2.type.TaiField;
+import io.snice.codecs.codec.gtp.type.ArpType;
+import io.snice.codecs.codec.gtp.type.EcgiField;
+import io.snice.codecs.codec.gtp.type.QosType;
+import io.snice.codecs.codec.gtp.type.RatType;
+import io.snice.codecs.codec.gtp.type.TaiField;
 import org.junit.Before;
 
 import java.nio.file.Files;
