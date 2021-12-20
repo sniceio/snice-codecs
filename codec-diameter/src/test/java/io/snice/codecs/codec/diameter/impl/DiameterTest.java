@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import static io.snice.codecs.codec.diameter.impl.DiameterParser.couldBeDiameterMessage;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  *
@@ -27,6 +27,7 @@ public class DiameterTest extends DiameterTestBase {
     public void testParseDiameterMessage() throws Exception {
         for (final RawDiameterMessageHolder raw : RAW_DIAMETER_MESSAGES) {
             final DiameterMessage msg = DiameterMessage.frame(raw.load());
+            assertThat(msg.getBuffer().capacity(), is(raw.load().toBuffer().capacity()));
             raw.assertHeader(msg.getHeader());
             assertThat(msg.getAllAvps().size(), is(raw.avpCount));
         }

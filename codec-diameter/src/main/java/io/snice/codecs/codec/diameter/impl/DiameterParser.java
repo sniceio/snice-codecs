@@ -5,29 +5,14 @@ import io.snice.buffer.ReadableBuffer;
 import io.snice.codecs.codec.diameter.DiameterHeader;
 import io.snice.codecs.codec.diameter.DiameterMessage;
 import io.snice.codecs.codec.diameter.DiameterParseException;
-import io.snice.codecs.codec.diameter.avp.Avp;
-import io.snice.codecs.codec.diameter.avp.AvpFramer;
 import io.snice.codecs.codec.diameter.avp.AvpHeader;
 import io.snice.codecs.codec.diameter.avp.FramedAvp;
-import io.snice.codecs.codec.diameter.avp.api.AcctApplicationId;
-import io.snice.codecs.codec.diameter.avp.api.AuthApplicationId;
 import io.snice.codecs.codec.diameter.avp.api.DestinationHost;
 import io.snice.codecs.codec.diameter.avp.api.DestinationRealm;
-import io.snice.codecs.codec.diameter.avp.api.DisconnectCause;
 import io.snice.codecs.codec.diameter.avp.api.ExperimentalResult;
-import io.snice.codecs.codec.diameter.avp.api.ExperimentalResultCode;
-import io.snice.codecs.codec.diameter.avp.api.HostIpAddress;
-import io.snice.codecs.codec.diameter.avp.api.Msisdn;
 import io.snice.codecs.codec.diameter.avp.api.OriginHost;
 import io.snice.codecs.codec.diameter.avp.api.OriginRealm;
-import io.snice.codecs.codec.diameter.avp.api.ProductName;
 import io.snice.codecs.codec.diameter.avp.api.ResultCode;
-import io.snice.codecs.codec.diameter.avp.api.SessionId;
-import io.snice.codecs.codec.diameter.avp.api.SubscriberStatus;
-import io.snice.codecs.codec.diameter.avp.api.SubscriptionData;
-import io.snice.codecs.codec.diameter.avp.api.UserName;
-import io.snice.codecs.codec.diameter.avp.api.VendorId;
-import io.snice.codecs.codec.diameter.avp.api.VendorSpecificApplicationId;
 import io.snice.codecs.codec.diameter.avp.impl.ImmutableAvpHeader;
 import io.snice.codecs.codec.diameter.avp.impl.ImmutableFramedAvp;
 
@@ -42,6 +27,15 @@ import java.util.Optional;
 public class DiameterParser {
 
     public static DiameterMessage frame(final Buffer buffer) throws DiameterParseException {
+
+        // this is somewhat of an annoying side effect of how the Buffer is structured.
+        // For a readable buffer, which inherits from Buffer, the toSlice is affected by where the reader index is.
+        // Once you've read a bunch of bytes, they are no longer "visible" and as such,
+        // when you do slice operations, those bytes are "gone". Somewhat of a design miss
+        // since it is confusing. However, by doing toBuffer, you ensure to "lock" it in place
+        // so if the passed in Buffer above is actually a ReadableBuffer, it will convert it
+        // to a proper immutable Buffer.
+        final var orig = buffer.toBuffer();
         final ReadableBuffer readable = buffer.toReadableBuffer();
         final DiameterHeader header = frameHeader(readable);
 
@@ -94,7 +88,7 @@ public class DiameterParser {
             }
         }
 
-        final Buffer entireMsg = buffer.slice(header.getLength());
+        final Buffer entireMsg = orig.slice(header.getLength());
         if (header.isRequest()) {
             return new ImmutableDiameterRequest(entireMsg, header, list, indexOfOrigHost, indexOfOrigRealm,
                     indexOfDestHost, indexOfDestRealm, indexOfResultCode, indexOfExperimentalCode);
