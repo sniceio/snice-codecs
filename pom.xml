@@ -15,7 +15,7 @@
     <name>Snice Networking</name>
     <groupId>io.snice.codecs</groupId>
     <artifactId>codecs-parent</artifactId>
-    <version>0.0.10-SNAPSHOT</version>
+    <version>0.0.10</version>
     <packaging>pom</packaging>
     <description>Snice Codecs - Various types of codecs</description>
 
@@ -40,7 +40,7 @@
         <connection>scm:git:git@github.com:sniceio/snice-codecs.git</connection>
         <developerConnection>scm:git:git@github.com:sniceio/snice-codecs.git</developerConnection>
         <url>git@github.com:sniceio/snice-codecs.git</url>
-        <tag>HEAD</tag>
+        <tag>snice-codecs-release-0.0.10</tag>
     </scm>
 
     <properties>
