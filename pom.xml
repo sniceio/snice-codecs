@@ -38,14 +38,14 @@
 
     <scm>
         <connection>scm:git:git@github.com:sniceio/snice-codecs.git</connection>
-        <developerConnection>scm:git:git@github.com:sniceio/snice-codecs.git</developerConnection>
+	<developerConnection>scm:git:https://github.com/sniceio/snice-codecs.git</developerConnection>
         <url>git@github.com:sniceio/snice-codecs.git</url>
         <tag>HEAD</tag>
     </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <snice-commons.version>0.1.10</snice-commons.version>
+        <snice-commons.version>0.1.11</snice-commons.version>
 	<snice-codecs-base.version>0.0.8</snice-codecs-base.version>
         <maven-builder-helper-plugin.version>3.1.0</maven-builder-helper-plugin.version>
         <logback.version>1.2.3</logback.version>
@@ -222,6 +222,43 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.13</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 
     <build>
         <plugins>
